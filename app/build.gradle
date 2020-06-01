@@ -1,26 +1,29 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 26    //修改 ｓｄｋ工具版本是２６
+    buildToolsVersion "26" //修改
 
     defaultConfig {
         applicationId "edu.fjnu.cse.helloworld"
         minSdkVersion 19
-        targetSdkVersion 24
+        targetSdkVersion 26     //修改 ｓｄｋ工具版本是２６
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+
+        repositories {    maven {        url "https://maven.google.com"    }}       //将release方法注释掉，替换成此行
+
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:26+' //修改
 }
